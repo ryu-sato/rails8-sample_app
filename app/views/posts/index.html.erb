@@ -9,6 +9,7 @@
     <%= render post %>
     <p>
       <%= link_to "Show this post", post %>
+      <%= link_to "Delete", post, method: :delete, data: { confirm: "Are you sure?" } %>
     </p>
   <% end %>
 </div>
