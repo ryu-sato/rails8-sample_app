@@ -1,0 +1,40 @@
+<% content_for :title, "Remote connection" %>
+
+<h1>Remote connection</h1>
+
+<% if @error %>
+  <p style="color: red"><%= @error %></p>
+<% end %>
+
+<%= form_with scope: :remote_connection, url: remote_connections_path do |form| %>
+  <p>
+    <%= form.label :protocol, "Protocol" %>
+    <%= form.select :protocol, RemoteConnection::PROTOCOLS.keys, selected: @params[:protocol] %>
+  </p>
+  <p>
+    <%= form.label :host, "Host" %>
+    <%= form.text_field :host, value: @params[:host] %>
+  </p>
+  <p>
+    <%= form.label :port, "Port (空欄で既定値)" %>
+    <%= form.number_field :port, value: @params[:port] %>
+  </p>
+  <p>
+    <%= form.label :username, "Username" %>
+    <%= form.text_field :username, value: @params[:username] %>
+  </p>
+  <p>
+    <%= form.label :password, "Password" %>
+    <%= form.password_field :password %>
+  </p>
+  <p>
+    <%= form.label :command, "Command" %>
+    <%= form.text_field :command, value: @params[:command], size: 40 %>
+  </p>
+  <%= form.submit "Execute" %>
+<% end %>
+
+<% if @output %>
+  <h2>Output</h2>
+  <pre><%= @output %></pre>
+<% end %>

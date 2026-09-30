@@ -1,0 +1,10 @@
+{
+  "permissions": {
+    "allow": [
+    ]
+  },
+  "model": "sonnet",
+  "language": "japanese",
+  "advisorModel": "opus",
+  "outputStyle": "concise"
+}

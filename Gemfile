@@ -66,3 +66,6 @@ group :test do
 end
 
 gem "jsbundling-rails", "~> 1.3"
+
+# SSH client for RemoteConnection::Ssh
+gem "net-ssh", "~> 7.3"
