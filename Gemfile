@@ -69,3 +69,6 @@ gem "jsbundling-rails", "~> 1.3"
 
 # SSH client for RemoteConnection::Ssh
 gem "net-ssh", "~> 7.3"
+
+# Telnet client for RemoteConnection::Telnet
+gem "net-telnet", "~> 0.2"
