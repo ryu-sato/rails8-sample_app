@@ -2,7 +2,7 @@
 FROM debian:bookworm-slim
 
 RUN apt-get update \
-    && apt-get install -y --no-install-recommends openssh-server busybox \
+    && apt-get install -y --no-install-recommends openssh-server busybox-static \
     && rm -rf /var/lib/apt/lists/* \
     && mkdir -p /run/sshd \
     && useradd -m -s /bin/bash testuser \
