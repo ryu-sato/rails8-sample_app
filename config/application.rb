@@ -23,5 +23,11 @@ module Rails8SampleApp
     #
     # config.time_zone = "Central Time (US & Canada)"
     # config.eager_load_paths << Rails.root.join("extras")
+
+    # ログはSemantic Loggerで標準出力へ出力する(テスト時は既定のファイル出力)。
+    unless Rails.env.test?
+      config.rails_semantic_logger.add_file_appender = false
+      config.semantic_logger.add_appender(io: $stdout, formatter: ENV.fetch("LOG_FORMAT", Rails.env.production? ? "json" : "color").to_sym)
+    end
   end
 end

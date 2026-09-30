@@ -72,3 +72,6 @@ gem "net-ssh", "~> 7.3"
 
 # Telnet client for RemoteConnection::Telnet
 gem "net-telnet", "~> 0.2"
+
+# Structured logging (audit logs for RemoteConnection)
+gem "rails_semantic_logger", "~> 4.17"
